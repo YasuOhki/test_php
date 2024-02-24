@@ -1,0 +1,27 @@
+@startuml test
+
+!define TRANSACTION CAE7F2
+
+entity users as "users"{
+  + id
+  --
+  name: string
+  mode: string
+}
+
+entity students as "students"{
+  + id
+  --
+  name: string
+  age: int
+  brother: int
+  status: int
+  --
+  アレルギー: string
+  住所: string
+  保護者氏名: string
+  保護者連絡先: int
+}
+
+users ||--|{ students
+@enduml
