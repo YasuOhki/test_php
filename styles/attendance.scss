@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  width: 400px;
+  height: 400px;
+  border: 1px solid #000000;
+  flex-direction: column;
+
+  .name {
+    display: flex;
+    font-size: 48px;
+    padding: 20px;
+  }
+  .status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .attend {
+      display: flex;
+      font-size: 64px;
+      background-color: orange;
+      color: white;
+      border: 1px solid #000000;
+      padding: 20px;
+      justify-content: space-around;
+    }
+    .nonattend {
+      display: flex;
+      font-size: 64px;
+      background-color: yellowgreen;
+      border: 1px solid #000000;
+      padding: 20px;
+      justify-content: space-around;
+    }
+  }
+  .return {
+    display: flex;
+    font-size: 48px;
+    color: black;
+    padding: 20px;
+  }
+}

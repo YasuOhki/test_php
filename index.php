@@ -10,41 +10,73 @@
   <?php
   require('dbaccess.php');
   ?>
-  <h2>園児リスト<br></h2>
-  <table border="1">
-    <tr>
-      <th>id</th>
-      <th>名前</th>
-      <th>学年</th>
-      <th>状態</th>
-      <th>詳細</th>
-    </tr>
-  <?php
-  $records = $db->query('SELECT id, name, age, status FROM `students`');
-  if ($records) {
+  <h1>園児リスト<br></h1>
+  <div class="list">
+      <table border="1">
+        <tr>
+          <th>id</th>
+          <th>名前</th>
+          <th>学年</th>
+          <th>状態</th>
+          <th>詳細</th>
+        </tr>
+      <?php
+      $records = $db->query('SELECT id, name, age, status FROM `students`');
+      if ($records) {
 
-    while ($record = $records->fetch_assoc()) {
-      if ($record["status"] == 1) {
-        $status = '登園';
+        while ($record = $records->fetch_assoc()) {
+          if ($record["status"] == 1) {
+            $status = '登園';
+          }
+          else {
+            $status = '降園';
+          }
+
+          if ($record["age"] <= 2) {
+            $class = $record["age"] . "才児";
+          }
+          elseif ($record["age"] == 3) {
+            $class = "年少";
+          }
+          elseif ($record["age"] == 4) {
+            $class = "年中";
+          }
+          elseif ($record["age"] == 5) {
+            $class = "年長";
+          }
+          else {
+            $class = null;
+          }
+      ?>
+          <tr>
+            <td><?php echo $record["id"] ?></td>
+            <td><a href="/test_php/attendance.php?id=<?php echo $record["id"]; ?>">
+              <?php echo $record["name"] ?></a>
+            </td>
+            <td><?php echo $class ?></td>
+            <td><?php echo $status ?></td>
+            <td><a href="/test_php/show.php?id=<?php echo $record["id"]; ?>">詳細</a></td>
+          </tr>
+      <?php
+        }
       }
       else {
-        $status = '降園';
+        echo $db->error;
       }
-  ?>
-      <tr>
-        <td><?php echo $record["id"] ?></td>
-        <td><?php echo $record["name"] ?></td>
-        <td><?php echo $record["age"] ?></td>
-        <td><?php echo $status ?></td>
-        <td><a href="/test_php/show.php?id=<?php echo $record["id"]; ?>">詳細</a></td>
-      </tr>
-  <?php
-    }
-  }
-  else {
-    echo $db->error;
-  }
-  ?>
-  </table>
+    ?>
+    </table>
+  </div>
+  <h1>新規登録</h1>
+
+  <h1>削除</h1>
+  <div class="delete_field">
+    <form action="/test_php/delete.php method='post'">
+      <div>
+        <label for="id">id</label>
+        <input tyep="text" id="id" name="id">
+        <input type="submit" value="送信">
+      </div>
+    </from>
+  </div>
 </body>
 </html>

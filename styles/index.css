@@ -1,6 +1,11 @@
-table {
+.list {
   width: 50%;
 }
-table th {
-  background-color: gray;
+.list th {
+  background-color: burlywood;
+}
+
+.delete_field {
+  border: 1px solid #000000;
+  padding: 20px;
 }/*# sourceMappingURL=index.css.map */

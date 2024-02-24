@@ -1,7 +1,12 @@
-table {
+.list {
   width: 50%;
 
   th {
     background-color: burlywood;
   }
+}
+
+.delete_field {
+  border: 1px solid #000000;
+  padding: 20px;
 }
