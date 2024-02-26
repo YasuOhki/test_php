@@ -1,10 +1,14 @@
 .list {
-  width: 50%;
+  border: 1px solid #000000;
 
-  th {
-    background-color: burlywood;
+  table {
+    width: 100%;
+    th {
+      background-color: burlywood;
+    }
   }
 }
+
 
 .delete_field {
   border: 1px solid #000000;

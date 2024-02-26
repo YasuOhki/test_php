@@ -1,7 +1,10 @@
 .list {
-  width: 50%;
+  border: 1px solid #000000;
 }
-.list th {
+.list table {
+  width: 100%;
+}
+.list table th {
   background-color: burlywood;
 }
 
