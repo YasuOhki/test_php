@@ -14,7 +14,7 @@
   if (!$stmt) {
     die($db->error);
   }
-  $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+  $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
   if (!$id) {
       echo '表示する園児を指定してください';
       exit();
@@ -27,13 +27,17 @@
     echo '指定されたレコードは存在しません';
     exit();
   }
-  if ($statusNum == 1) {
-    $status = '登園';
-  }
-  else {
-    $status = '降園';
-  }
   ?>
+
+  <!-- 削除前に園児データの内容を表示 -->
+  <div class="confirm">
+    <form action="/test_php/dbaccess_delete.php" method="POST">
+      <label>本当に削除しますか？</label>
+      <input type="text" name="id">
+      <input type="submit" value="削除">
+    </form>
+  </div>
+  <a href="/test_php/index.php">一覧に戻る</a>
 
   <h1>詳細情報</h1>
   <table border="1">
@@ -42,7 +46,6 @@
       <th>名前</th>
       <th>学年</th>
       <th>兄弟児</th>
-      <th>状態</th>
       <th>アレルギー</th>
       <th>住所</th>
       <th>保護者氏名</th>
@@ -53,18 +56,11 @@
       <td><?php echo htmlspecialchars($name); ?></td>
       <td><?php echo htmlspecialchars($age); ?></td>
       <td><?php echo htmlspecialchars($brother); ?></td>
-      <td><?php echo htmlspecialchars($status); ?></td>
       <td><?php echo htmlspecialchars($Allergie); ?></td>
       <td><?php echo htmlspecialchars($address); ?></td>
       <td><?php echo htmlspecialchars($parentname); ?></td>
       <td><?php echo htmlspecialchars($parentphone); ?></td>
     </tr>
   </table>
-
-  <div class="confirm">
-    <label>本当に削除しますか？</label>
-    <input type="submit" value="削除">
-  </div>
-  <a href="/test_php/index.php">一覧へ</a>
 </body>
 </html>

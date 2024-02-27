@@ -76,15 +76,15 @@
   </div>
 
 
-  <h1>削除</h1>
+  <h1>園児データ削除</h1>
   <div class="delete_field">
-    <form action="/test_php/delete.php method='post'">
+    <form action="/test_php/delete.php" method="post">
       <div>
         <label for="id">id</label>
         <input type="text" id="id" name="id">
         <div class="delete_button"><input type="submit" value="送信"></div>
       </div>
-    </from>
+    </form>
   </div>
 </body>
 </html>

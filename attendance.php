@@ -34,8 +34,8 @@
     <div class="status">
       <?php if($statusNum === 0) { ?>
       <div class="attend">
-        <!-- <a href="/test_php/dbaccess_status.php?status=1&id=<?php echo $id ?>"> -->
-        <a href="/test_php/attendance_status_update.php?status=1&id=<?php echo $id ?>">
+        <a href="/test_php/dbaccess_status.php?status=1&id=<?php echo $id ?>">
+        <!-- <a href="/test_php/attendance_status_update.php?status=1&id=<?php echo $id ?>"> -->
           登園
         </a>
       </div>
@@ -43,8 +43,8 @@
 
       <?php if($statusNum === 1) { ?>
       <div class="nonattend">
-        <!-- <a href="/test_php/dbaccess_status.php?status=0&id=<?php echo $id ?>"> -->
-        <a href="/test_php/attendance_status_update.php?status=0&id=<?php echo $id ?>">
+        <a href="/test_php/dbaccess_status.php?status=0&id=<?php echo $id ?>">
+        <!-- <a href="/test_php/attendance_status_update.php?status=0&id=<?php echo $id ?>"> -->
           降園
         </a>
       </div>

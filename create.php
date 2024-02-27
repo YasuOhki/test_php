@@ -6,7 +6,7 @@
   <title>園児リストへの新規登録</title>
 </head>
 <body>
-  <h1>新規登録</h1>
+  <h2>削除する園児データ</h2>
   <form action="/test_php/dbaccess_insert.php" method="POST">
     <div class="create_form">
       <table>
