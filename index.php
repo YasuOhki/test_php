@@ -66,15 +66,23 @@
     ?>
     </table>
   </div>
+
+  <h1>てすと</h1>
+  <a href="/test_php/create_user.php">ユーザ新規登録</a>
+
   <h1>新規登録</h1>
+  <div class="create_field">
+    <a href="/test_php/create.php">新規登録ページへ</a>
+  </div>
+
 
   <h1>削除</h1>
   <div class="delete_field">
     <form action="/test_php/delete.php method='post'">
       <div>
         <label for="id">id</label>
-        <input tyep="text" id="id" name="id">
-        <input type="submit" value="送信">
+        <input type="text" id="id" name="id">
+        <div class="delete_button"><input type="submit" value="送信"></div>
       </div>
     </from>
   </div>

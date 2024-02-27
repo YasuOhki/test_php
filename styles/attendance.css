@@ -13,7 +13,6 @@
 .main .status {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
 }
 .main .status .attend {
   display: flex;
@@ -22,7 +21,6 @@
   color: white;
   border: 1px solid #000000;
   padding: 20px;
-  justify-content: space-around;
 }
 .main .status .nonattend {
   display: flex;
@@ -30,7 +28,7 @@
   background-color: yellowgreen;
   border: 1px solid #000000;
   padding: 20px;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .main .return {
   display: flex;
