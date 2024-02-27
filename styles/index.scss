@@ -1,16 +1,17 @@
 .list {
-  border: 1px solid #000000;
-
   table {
-    width: 100%;
+    width: 50%;
+
     th {
       background-color: burlywood;
     }
   }
 }
 
-
 .delete_field {
-  border: 1px solid #000000;
   padding: 20px;
+
+  .delete_button {
+    font-size: 32px;
+  }
 }
